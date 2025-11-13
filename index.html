@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxHacks — Gaming Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0d13;
+      --accent: #00f5a0;
+      --accent-2: #ffc300;
+      --text: #eaf3ff;
+      --muted: #9aa5b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, rgba(10,13,19,1) 0%, rgba(15,20,30,1) 100%);
+      color: var(--text);
+      min-height: 100vh;
+      background-image: url('https://cdn.wallpapersafari.com/4/22/Y5bWi2.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      backdrop-filter: blur(4px);
+    }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(0,0,0,0.6); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .logo { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 26px; color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+    nav a { color: var(--text); text-decoration: none; margin: 0 18px; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--accent-2); }
+
+    .hero { text-align: center; padding: 100px 20px 60px; background: rgba(0,0,0,0.5); backdrop-filter: blur(6px); }
+    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 48px; color: var(--accent); text-shadow: 0 0 25px rgba(0,245,160,0.6); }
+    .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; }
+    .shop-btn { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #000; font-weight: 700; padding: 12px 26px; border-radius: 12px; border: none; margin-top: 24px; font-family: 'Orbitron', sans-serif; cursor: pointer; transition: 0.3s; }
+    .shop-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 195, 0, 0.3); }
+
+    .products-section { padding: 60px; background: rgba(0,0,0,0.6); }
+    .search-box { text-align: center; margin-bottom: 40px; }
+    .search-box select {
+      width: 60%;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(10,13,19,0.9);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .section-title { font-family: 'Orbitron', sans-serif; font-size: 28px; color: var(--accent); text-align: center; margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,245,160,0.5); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 28px; }
+    .product-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; backdrop-filter: blur(6px); transition: 0.3s; position: relative; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 0 20px rgba(0,245,160,0.2); }
+    .product-card img { width: 100%; height: 180px; object-fit: cover; }
+    .product-info { padding: 14px 16px 18px; display: flex; flex-direction: column; align-items: center; }
+    .product-info h3 { font-family: 'Orbitron', sans-serif; font-size: 16px; color: var(--text); text-align: center; }
+    .product-info p { color: var(--muted); font-size: 14px; margin-top: 6px; height: 36px; overflow: hidden; text-align: center; }
+    .price { color: var(--accent-2); font-weight: 700; font-size: 16px; margin-top: 10px; }
+
+    .hack-btn { background: #ff6600; color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 5px; width: 80%; }
+    .buy-btn { background: #0088cc; color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px; width: 80%; text-decoration: none; margin-bottom: 10px; }
+    .buy-btn i, .hack-btn i { font-size: 18px; }
+
+    footer { text-align: center; color: var(--muted); padding: 20px; font-size: 14px; background: rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.05); }
+    footer a { color: #00bfff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MaxHacks</div>
+    <nav>
+      <a href="index.html">Upload</a>
+      <a href="#">Accessories</a>
+      <a href="#">Consoles</a>
+      <a href="#">Offers</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🔥 BGMI Style Gaming Zone 🔥</h1>
+    <p>Top Rated Gaming Accessories, Consoles aur Merch le aayiye ek hi jagah par!</p>
+    <button class="shop-btn">Shop Now</button>
+  </section>
+
+  <section class="products-section">
+    <h2 class="section-title">⚙ Featured Gaming Products ⚙</h2>
+    <div class="search-box">
+      <select id="searchSelect"></select>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+
+  <footer>
+    Copyright © 2025 MaxHacks BY <a href="https://github.com/maxmentor" target="_blank">Maxmentor</a>
+  </footer>
+
+  <script>
+    const products = [
+      { title: 'RGB Gaming Mouse', price: 1299, desc: 'High precision mouse with 7 color RGB lighting.', image: 'https://m.media-amazon.com/images/I/61yUwF1Xj+L._SL1500_.jpg' },
+      { title: 'Mechanical Keyboard', price: 2999, desc: 'Blue switch mechanical keyboard for pro gamers.', image: 'https://m.media-amazon.com/images/I/71Kk1bT+VjL._SL1500_.jpg' },
+      { title: 'Gaming Headset', price: 1999, desc: 'Surround sound headset with mic and comfort pads.', image: 'https://m.media-amazon.com/images/I/61CGHv6kmWL._SL1500_.jpg' },
+      { title: 'PlayStation 5 Controller', price: 5999, desc: 'DualSense wireless controller with adaptive triggers.', image: 'https://m.media-amazon.com/images/I/61O9tWR6WDS._SL1500_.jpg' }
+    ];
+
+    const productGrid = document.getElementById('productGrid');
+    const searchSelect = document.getElementById('searchSelect');
+
+    products.forEach(p => {
+      const opt = document.createElement('option');
+      opt.value = p.title;
+      opt.textContent = p.title;
+      searchSelect.appendChild(opt);
+    });
+
+    function renderProducts(filter = '') {
+      productGrid.innerHTML = '';
+      const filtered = filter ? products.filter(p => p.title === filter) : products;
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.title}" />
+          <div class="product-info">
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <div class="price">₹${Number(p.price).toFixed(2)}</div>
+            <button class="hack-btn"><i class="fas fa-eye"></i> Hack Preview</button>
+            <a href="https://t.me/maxmentor_admin?text=${encodeURIComponent('I want to buy '+p.title+' for ₹'+p.price+' '+p.image)}" target="_blank" class="buy-btn"><i class="fab fa-telegram-plane"></i> Buy Now</a>
+          </div>
+        `;
+        productGrid.appendChild(card);
+      });
+    }
+
+    searchSelect.addEventListener('change', e => renderProducts(e.target.value));
+    renderProducts();
+  </script>
+</body>
+</html>
