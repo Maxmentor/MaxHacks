@@ -69,18 +69,168 @@
 
     footer { text-align: center; color: var(--muted); padding: 20px; font-size: 14px; background: rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.05); }
     footer a { color: #00bfff; text-decoration: none; }
-  </style>
+  @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  nav ul {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 5px;
+  scrollbar-width: thin;
+}
+  .products {
+    grid-template-columns: 1fr;
+  }
+  .product-card {
+    width: 90%;
+    margin: auto;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .search-box select {
+    width: 90%;
+    font-size: 14px;
+  }
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+/* --- Mobile Responsive Fix --- */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    gap: 10px;
+  }
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .search-box select {
+    width: 100% !important;
+    font-size: 16px;
+  }
+  .products {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+  .product-card {
+    width: 90% !important;
+    margin: auto;
+  }
+  .btn-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn {
+    width: 100% !important;
+  }
+  h1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+}
+/* --- Bootstrap Style Responsive Navbar --- */
+.navbar-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  background: #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+}
+/* Slide Menu CSS */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100%;
+  background: #0c0c0c;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 9999;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.6);
+}
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+.side-menu ul li a {
+  display: block;
+  color: #fff;
+  padding: 12px 0;
+  font-size: 18px;
+}
+.close-btn {
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+}
+.navbar-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+</style>
 </head>
 <body>
 
   <header>
     <div class="logo">MaxHacks</div>
     <nav>
-      <a href="index.html">Upload</a>
-      <a href="#">Accessories</a>
-      <a href="#">Consoles</a>
-      <a href="#">Offers</a>
-    </nav>
+  <div class="navbar-toggle" onclick="openMenu()">☰</div>
+</nav>
+
+<!-- Slide Menu -->
+<div id="sideMenu" class="side-menu">
+  <span class="close-btn" onclick="closeMenu()">×</span>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Hacks</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
   </header>
 
   <section class="hero">
@@ -142,5 +292,18 @@
     searchSelect.addEventListener('change', e => renderProducts(e.target.value));
     renderProducts();
   </script>
+<script>
+function toggleMenu() {
+  document.querySelector('nav ul').classList.toggle('show');
+}
+</script>
+<script>
+function openMenu() {
+  document.getElementById('sideMenu').style.left = '0';
+}
+function closeMenu() {
+  document.getElementById('sideMenu').style.left = '-260px';
+}
+</script>
 </body>
 </html>
