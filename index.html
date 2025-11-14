@@ -69,12 +69,7 @@
 
     footer { text-align: center; color: var(--muted); padding: 20px; font-size: 14px; background: rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.05); }
     footer a { color: #00bfff; text-decoration: none; }
-  @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
+  /* Remove mobile-only restrictions */
   nav ul {
   display: flex;
   gap: 20px;
@@ -153,12 +148,10 @@
 }
 /* --- Bootstrap Style Responsive Navbar --- */
 .navbar-toggle {
-  display: none;
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
-  background: #222;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 15px;
+  display: block; /* Always visible on all screens */
 }
 
 @media (max-width: 768px) {
@@ -225,8 +218,9 @@
 <div id="sideMenu" class="side-menu">
   <span class="close-btn" onclick="closeMenu()">×</span>
   <ul>
-    <li><a href="#">BGMI 4.1 ORG .APK</a></li>
-     <li><a href="#">BGMI 4.1 ORG .OBB</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">BGMI 4.1 ORG .APK [64 Bit]</a></li>
+    <li><a href="#">BGMI 4.1 ORG .OBB [64 Bit]</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
 </div>
